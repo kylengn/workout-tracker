@@ -6,7 +6,7 @@
       <div class="flex items-center gap-x-4">
         <img class="w-8" src="../assets/images/bum.png" alt="" />
         <h1 class="text-lg">
-          Gainz <span class="bg-red-500 p-2 italic">Tracker</span>
+          Gainz <span class="bg-red-500 p-1 italic">Tracker</span>
         </h1>
       </div>
       <ul class="flex flex-1 justify-end gap-x-10">

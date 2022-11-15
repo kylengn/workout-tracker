@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="dataLoaded"
-    class="container mt-10 px-10 uppercase font-bold tracking-wider text-white"
+    class="container mt-10 px-6 uppercase font-bold tracking-wider text-white"
   >
     <!-- No Data -->
     <div v-if="data.length === 0" class="w-full flex flex-col items-center">
@@ -19,7 +19,7 @@
       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
     >
       <router-link
-        class="flex flex-col items-center bg-black p-10 shadow-lg cursor-pointer rounded-2xl"
+        class="flex flex-col items-center bg-black p-10 shadow-lg cursor-pointer rounded-2xl hover:scale-105 transition-transform"
         :to="{ name: 'View-Workout', params: { workoutId: workout.id } }"
         v-for="(workout, index) in data"
         :key="index"

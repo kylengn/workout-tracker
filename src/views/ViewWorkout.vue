@@ -1,6 +1,6 @@
 <template>
   <div
-    class="max-w-screen-sm mx-auto px-10 py-10 text-white uppercase font-bold tracking-wider"
+    class="max-w-screen-sm mx-auto px-6 py-10 text-white uppercase font-bold tracking-wider"
   >
     <!-- App Message -->
     <div

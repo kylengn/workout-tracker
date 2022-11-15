@@ -1,6 +1,6 @@
 <template>
   <div
-    class="max-w-screen-md mx-auto px-10 py-10 uppercase font-bold tracking-wider"
+    class="max-w-screen-md mx-auto px-6 py-10 uppercase font-bold tracking-wider"
   >
     <!-- Status Message -->
     <div
@@ -18,8 +18,9 @@
         @submit.prevent="createWorkout"
         class="flex flex-col gap-y-5 w-full"
       >
-        <h1 class="text-2xl">
-          <span class="bg-red-500 p-2 italic">Record</span> Workout
+        <h1 class="text-2xl tracking-widest">
+          <span class="bg-red-500 p-1 italic">Record</span>
+          Workout
         </h1>
 
         <!-- Workout Name -->
