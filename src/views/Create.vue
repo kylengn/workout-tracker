@@ -1,6 +1,6 @@
 <template>
   <div
-    class="max-w-screen-md mx-auto px-4 py-10 uppercase font-bold tracking-wider"
+    class="max-w-screen-md mx-auto px-10 py-10 uppercase font-bold tracking-wider"
   >
     <!-- Status Message -->
     <div
@@ -12,7 +12,7 @@
     </div>
 
     <!-- Create -->
-    <div class="p-10 flex items-start bg-black text-white rounded-md shadow-lg">
+    <div class="p-10 flex items-start bg-black text-white rounded-lg shadow-lg">
       <!-- Form -->
       <form
         @submit.prevent="createWorkout"
@@ -184,7 +184,7 @@
           type="submit"
           class="mt-6 py-2 px-6 rounded-full self-start uppercase tracking-wider text-white bg-red-500 duration-200 border-solid border-2 border-transparent hover:border-red-500 hover:bg-transparent hover:text-red-500"
         >
-          Record Workout
+          Create Workout
         </button>
       </form>
     </div>

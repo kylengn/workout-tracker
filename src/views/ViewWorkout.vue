@@ -1,6 +1,6 @@
 <template>
   <div
-    class="max-w-screen-sm mx-auto px-4 py-10 text-white uppercase font-bold tracking-wider"
+    class="max-w-screen-sm mx-auto px-10 py-10 text-white uppercase font-bold tracking-wider"
   >
     <!-- App Message -->
     <div
@@ -15,25 +15,25 @@
     <div v-if="dataLoaded">
       <!-- General Workout Info -->
       <div
-        class="flex flex-col items-center p-10 rounded-md shadow-md bg-black relative"
+        class="flex flex-col items-center p-10 rounded-lg shadow-lg bg-black relative"
       >
-        <div v-if="user" class="flex absolute left-4 top-2 gap-2">
+        <div v-if="user" class="flex absolute left-6 top-4 gap-2">
           <div
-            class="h-7 w-7 rounded-full flex justify-center items-center cursor-pointer bg-light-grey shadow-lg"
+            class="h-10 w-10 rounded-full flex justify-center items-center cursor-pointer bg-light-grey shadow-lg"
             @click="editMode"
           >
             <img
-              class="h-4 w-auto"
+              class="h-6 w-auto"
               src="../assets/images/pencil-simple-fill.png"
               alt=""
             />
           </div>
           <div
-            class="h-7 w-7 rounded-full flex justify-center items-center cursor-pointer bg-light-grey shadow-lg"
+            class="h-10 w-10 rounded-full flex justify-center items-center cursor-pointer bg-light-grey shadow-lg"
             @click="deleteWorkout"
           >
             <img
-              class="h-4 w-auto"
+              class="h-6 w-auto"
               src="../assets/images/trash-simple-fill.png"
               alt=""
             />
@@ -73,12 +73,12 @@
 
       <!-- Exercises -->
       <div
-        class="mt-10 p-10 rounded-md flex flex-col items-center bg-black shadow-md"
+        class="mt-10 p-10 rounded-lg shadow-lg flex flex-col items-center bg-black"
       >
         <!-- Strength Training -->
         <div
           v-if="data.workoutType === 'strength'"
-          class="flex flex-col gap-y-4 w-full"
+          class="flex flex-col gap-y-10 w-full"
         >
           <div
             class="flex flex-col gap-x-6 gap-y-2 relative sm:flex-row"

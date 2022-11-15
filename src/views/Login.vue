@@ -1,6 +1,6 @@
 <template>
   <div
-    class="max-w-screen-sm mx-auto px-4 py-10 uppercase font-bold tracking-wider"
+    class="max-w-screen-sm mx-auto px-10 py-10 uppercase font-bold tracking-wider"
   >
     <!-- Error Handling -->
     <div v-if="errorMsg" class="mb-10 p-4 rounded-md bg-red-500 shadow-lg">
@@ -10,7 +10,7 @@
     <!-- Login Form -->
     <form
       @submit.prevent="login"
-      class="p-10 flex flex-col bg-black rounded-md shadow-lg"
+      class="p-10 flex flex-col bg-black rounded-lg shadow-lg"
     >
       <h1 class="text-3xl text-white mb-4">Login</h1>
 
@@ -70,7 +70,7 @@ export default {
     // Login function
     const login = async () => {
       try {
-        let { error } = await supabase.auth.signInWithPassword({
+        let { error } = await supabase.auth.signIn({
           email: email.value,
           password: password.value,
         });
