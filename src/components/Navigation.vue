@@ -13,6 +13,7 @@
       </div>
       <ul class="flex flex-1 justify-end gap-x-10">
         <router-link
+          v-if="user"
           class="cursor-pointer hover:text-red-500 duration-300"
           :to="{ name: 'Home' }"
           >Home</router-link
@@ -23,12 +24,12 @@
           :to="{ name: 'Create' }"
           >Create</router-link
         >
-        <router-link
+        <!-- <router-link
           v-if="!user"
           class="cursor-pointer hover:text-red-500 duration-300"
           :to="{ name: 'Login' }"
           >Login</router-link
-        >
+        > -->
         <li
           v-if="user"
           @click="logout"
@@ -57,7 +58,7 @@ export default {
     // Logout function
     const logout = async () => {
       await supabase.auth.signOut();
-      router.push({ name: "Home" });
+      router.push({ name: "Login" });
     };
 
     return {
@@ -67,3 +68,9 @@ export default {
   },
 };
 </script>
+
+<style>
+.active {
+  color: rgb(239 68 68 / 1);
+}
+</style>
