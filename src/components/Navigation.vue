@@ -1,5 +1,7 @@
 <template>
-  <header class="bg-black text-white uppercase font-bold tracking-widest">
+  <header
+    class="bg-black text-white uppercase font-bold tracking-widest fixed w-full z-10"
+  >
     <nav
       class="container py-5 px-4 flex flex-col gap-4 items-center sm:flex-row"
     >

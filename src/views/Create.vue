@@ -1,14 +1,17 @@
 <template>
   <div
-    class="max-w-screen-md mx-auto px-6 py-10 uppercase font-bold tracking-wider"
+    class="max-w-screen-md px-8 md:px-6 mx-auto pt-[10rem] md:pt-0 pb-8 md:pb-0 uppercase font-bold tracking-wider min-h-screen flex flex-col justify-center"
   >
     <!-- Status Message -->
+    <div v-if="errorMsg" class="mb-10 p-4 rounded-md bg-red-500 shadow-lg">
+      <p class="text-white">{{ errorMsg }}</p>
+    </div>
+
     <div
-      v-if="statusMsg || errorMsg"
-      class="mb-10 p-4 bg-light-grey rounded-md shadow-lg"
+      v-if="statusMsg"
+      class="mb-10 p-4 rounded-md bg-at-light-green shadow-lg"
     >
-      <p class="text-at-light-green">{{ statusMsg }}</p>
-      <p class="text-red-500">{{ errorMsg }}</p>
+      <p class="text-white">{{ statusMsg }}</p>
     </div>
 
     <!-- Create -->
@@ -172,21 +175,12 @@
               alt=""
             />
           </div>
-          <button
-            @click="addExercise"
-            type="button"
-            class="mt-6 py-2 px-6 rounded-full self-start uppercase tracking-wider text-white bg-red-500 duration-200 border-solid border-2 border-transparent hover:border-red-500 hover:bg-transparent hover:text-red-500"
-          >
-            Add Exercise
-          </button>
+          <!-- Add Exercise Btn -->
+          <Button @click="addExercise">Add Exercise</Button>
         </div>
 
-        <button
-          type="submit"
-          class="mt-6 py-2 px-6 rounded-full self-start uppercase tracking-wider text-white bg-red-500 duration-200 border-solid border-2 border-transparent hover:border-red-500 hover:bg-transparent hover:text-red-500"
-        >
-          Create Workout
-        </button>
+        <!-- Create Workout Btn -->
+        <Button type="submit">Create Workout</Button>
       </form>
     </div>
   </div>
@@ -196,8 +190,12 @@
 import { ref } from "vue";
 import { uid } from "uid";
 import { supabase } from "../supabase/init";
+import Button from "../components/Button.vue";
 
 export default {
+  components: {
+    Button,
+  },
   name: "create",
   setup() {
     // Create data

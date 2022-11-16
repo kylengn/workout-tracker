@@ -1,14 +1,17 @@
 <template>
   <div
-    class="max-w-screen-sm mx-auto px-6 py-10 text-white uppercase font-bold tracking-wider"
+    class="max-w-screen-sm text-white px-8 md:px-6 mx-auto pt-[10rem] sm:pt-[8rem] pb-8 uppercase font-bold tracking-wider min-h-screen flex flex-col justify-center"
   >
     <!-- App Message -->
+    <div v-if="errorMsg" class="mb-10 p-4 rounded-md bg-red-500 shadow-lg">
+      <p class="text-white">{{ errorMsg }}</p>
+    </div>
+
     <div
-      v-if="statusMsg || errorMsg"
-      class="mb-10 p-4 rounded-md shadow-md bg-light-grey"
+      v-if="statusMsg"
+      class="mb-10 p-4 rounded-md bg-at-light-green shadow-lg"
     >
-      <p class="text-at-light-green">{{ statusMsg }}</p>
-      <p class="text-red-500">{{ errorMsg }}</p>
+      <p class="text-white">{{ statusMsg }}</p>
     </div>
 
     <!-- Data -->
@@ -137,6 +140,7 @@
                 v-if="edit"
                 type="text"
                 id="weight"
+                placeholder="In Kg's"
                 required
                 class="p-2 w-full text-gray-500 focus:outline-none"
                 v-model="item.weight"

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="max-w-screen-sm mx-auto px-6 py-10 uppercase font-bold tracking-wider"
+    class="max-w-screen-sm mx-auto px-6 uppercase font-bold tracking-wider min-h-screen flex flex-col justify-center"
   >
     <!-- Error Handling -->
     <div v-if="errorMsg" class="mb-10 p-4 rounded-md bg-red-500 shadow-lg">
@@ -51,12 +51,8 @@
         />
       </div>
 
-      <button
-        type="submit"
-        class="mt-6 py-2 px-6 rounded-full self-start uppercase tracking-wider text-white bg-red-500 duration-200 border-solid border-2 border-transparent hover:border-red-500 hover:bg-transparent hover:text-white"
-      >
-        Register
-      </button>
+      <!-- Register Btn -->
+      <Button type="submit">Register</Button>
 
       <div class="text-sm mt-6 text-center text-white">
         Already have an account?
@@ -72,8 +68,12 @@
 import { ref } from "vue";
 import { supabase } from "../supabase/init";
 import { useRouter } from "vue-router";
+import Button from "../components/Button.vue";
 
 export default {
+  components: {
+    Button,
+  },
   name: "register",
   setup() {
     // Create data / vars
