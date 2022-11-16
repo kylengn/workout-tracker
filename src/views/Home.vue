@@ -48,6 +48,33 @@
       </router-link>
     </div>
   </div>
+
+  <!-- Spinner While Loading Data -->
+  <div
+    v-if="!dataLoaded"
+    class="container px-8 md:px-6 pt-[10rem] md:pt-0 pb-8 md:pb-0 uppercase font-bold tracking-wider text-white min-h-screen flex flex-col justify-center"
+  >
+    <div class="w-full flex flex-col items-center">
+      <svg
+        class="h-[10rem] w-auto animate-spin"
+        xmlns="http://www.w3.org/2000/svg"
+        width="192"
+        height="192"
+        fill="#ef4406"
+        viewBox="0 0 256 256"
+      >
+        <rect width="256" height="256" fill="none"></rect>
+        <path
+          d="M124,136a8,8,0,0,1-8-8,16,16,0,0,1,16-16,25.9,25.9,0,0,1,26,26,36,36,0,0,1-36,36,46,46,0,0,1-46-46,56,56,0,0,1,56-56,65.9,65.9,0,0,1,66,66,76,76,0,0,1-76,76,86,86,0,0,1-86-86,96,96,0,0,1,96-96A106.1,106.1,0,0,1,238,138"
+          fill="none"
+          stroke="#ef4406"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="24"
+        ></path>
+      </svg>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -60,7 +87,7 @@ export default {
   setup() {
     // Create data / vars
     const data = ref([]);
-    const dataLoaded = ref(null);
+    const dataLoaded = ref(false);
 
     // Get data
     const getData = async () => {
