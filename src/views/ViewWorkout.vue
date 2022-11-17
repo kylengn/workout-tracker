@@ -33,7 +33,7 @@
           </div>
           <div
             class="h-10 w-10 rounded-full flex justify-center items-center cursor-pointer bg-light-grey shadow-lg"
-            @click="deleteWorkout"
+            @click="showDeletionModal"
           >
             <img
               class="h-6 w-auto"
@@ -242,26 +242,23 @@
             />
           </div>
 
-          <button
+          <!-- Add Exercise Btn -->
+          <Button
             v-if="edit"
             @click="addExercise"
-            type="button"
-            class="mt-6 py-2 px-6 rounded-full self-start uppercase tracking-wider text-white bg-red-500 duration-200 border-solid border-2 border-transparent hover:border-red-500 hover:bg-transparent hover:text-red-500"
+            class="hover:border-red-500 hover:text-red-500 bg-red-500"
+            >Add Exercise</Button
           >
-            Add Exercise
-          </button>
         </div>
       </div>
 
       <!-- Update -->
-      <button
+      <Button
         v-if="edit"
         @click="update"
-        type="button"
-        class="mt-6 py-2 px-6 rounded-full self-start uppercase tracking-wider text-white bg-red-500 duration-200 border-solid border-2 border-transparent hover:border-red-500 hover:bg-transparent hover:text-red-500"
+        class="hover:border-red-500 hover:text-red-500 bg-red-500"
+        >Update Workout</Button
       >
-        Update Workout
-      </button>
     </div>
 
     <!-- Spinner While Loading Data -->
@@ -286,6 +283,30 @@
         ></path>
       </svg>
     </div>
+
+    <!-- Deletion Modal Popup -->
+    <div
+      v-show="isModalVisible"
+      class="absolute inset-0 bg-black/50 min-h-screen min-w-screen px-8"
+    >
+      <div
+        class="flex flex-col justify-center items-center container bg-white p-10 mt-[10rem] max-w-2xl w-full rounded-lg shadow-lg text-black gap-y-6"
+      >
+        <h1>Are you sure you want to delete?</h1>
+        <div class="flex justify-center items-center gap-x-4">
+          <Button
+            @click="closeDeletionModal"
+            class="hover:border-at-light-green hover:text-at-light-green bg-at-light-green"
+            >Cancel</Button
+          >
+          <Button
+            @click="deleteWorkout"
+            class="hover:border-red-500 hover:text-red-500 bg-red-500"
+            >Delete</Button
+          >
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -296,9 +317,26 @@ import { useRoute, useRouter } from "vue-router";
 import { uid } from "uid";
 import store from "../store/index";
 import { computed } from "vue";
+import Button from "../components/Button.vue";
 
 export default {
+  components: {
+    Button,
+  },
   name: "view-workout",
+  data() {
+    return {
+      isModalVisible: false,
+    };
+  },
+  methods: {
+    showDeletionModal() {
+      this.isModalVisible = true;
+    },
+    closeDeletionModal() {
+      this.isModalVisible = false;
+    },
+  },
   setup() {
     // Create data / vars
     const data = ref(null);

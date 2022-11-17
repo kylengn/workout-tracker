@@ -52,7 +52,11 @@
       </div>
 
       <!-- Register Btn -->
-      <Button type="submit">Register</Button>
+      <Button
+        type="submit"
+        class="hover:border-red-500 hover:text-red-500 bg-red-500"
+        >Register</Button
+      >
 
       <div class="text-sm mt-6 text-center text-white">
         Already have an account?

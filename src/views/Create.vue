@@ -176,11 +176,19 @@
             />
           </div>
           <!-- Add Exercise Btn -->
-          <Button @click="addExercise">Add Exercise</Button>
+          <Button
+            @click="addExercise"
+            class="hover:border-red-500 hover:text-red-500 bg-red-500"
+            >Add Exercise</Button
+          >
         </div>
 
         <!-- Create Workout Btn -->
-        <Button type="submit">Create Workout</Button>
+        <Button
+          type="submit"
+          class="hover:border-red-500 hover:text-red-500 bg-red-500"
+          >Create Workout</Button
+        >
       </form>
     </div>
   </div>

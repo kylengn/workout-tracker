@@ -39,7 +39,11 @@
       </div>
 
       <!-- Login Btn -->
-      <Button type="submit">Start</Button>
+      <Button
+        type="submit"
+        class="hover:border-red-500 hover:text-red-500 bg-red-500"
+        >Start</Button
+      >
 
       <div class="text-sm mt-6 text-center text-white">
         Don't have an account yet?
