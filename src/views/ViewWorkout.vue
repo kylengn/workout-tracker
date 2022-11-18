@@ -140,7 +140,6 @@
                 v-if="edit"
                 type="text"
                 id="weight"
-                placeholder="In Kg's"
                 required
                 class="p-2 w-full text-gray-500 focus:outline-none"
                 v-model="item.weight"
@@ -155,6 +154,13 @@
               class="h-4 w-auto absolute -left-6 top-1 cursor-pointer"
               alt=""
             />
+          </div>
+          <!-- Exercise Counter -->
+          <div
+            class="flex space-x-2 border-t-2 border-light-grey border-double pt-6 text-lg"
+          >
+            <p class="text-red-500">Total Exercise(s):</p>
+            <span>{{ data.exercises.length }}</span>
           </div>
 
           <button
@@ -240,6 +246,14 @@
               class="h-4 w-auto absolute -left-6 top-1 cursor-pointer"
               alt=""
             />
+          </div>
+
+          <!-- Exercise Counter -->
+          <div
+            class="flex space-x-2 border-t-2 border-light-grey border-double pt-6 text-lg"
+          >
+            <p class="text-red-500">Total Exercise(s):</p>
+            <span>{{ data.exercises.length }}</span>
           </div>
 
           <!-- Add Exercise Btn -->
