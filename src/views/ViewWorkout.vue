@@ -1,6 +1,6 @@
 <template>
   <div
-    class="max-w-screen-sm text-white px-8 md:px-6 mx-auto pt-[10rem] sm:pt-[8rem] pb-8 uppercase font-bold tracking-wider min-h-screen flex flex-col justify-center"
+    class="max-w-screen-sm text-white px-8 md:px-6 mx-auto pt-[10rem] landscape:pt-[8rem] landscape:pb-[3rem] pb-8 uppercase font-bold tracking-wider min-h-screen flex flex-col justify-center"
   >
     <!-- App Message -->
     <div v-if="errorMsg" class="mb-10 p-4 rounded-md bg-red-500 shadow-lg">

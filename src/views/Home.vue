@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="dataLoaded"
-    class="container px-8 md:px-6 pt-[10rem] md:pt-0 pb-8 md:pb-0 uppercase font-bold tracking-wider text-white min-h-screen flex flex-col justify-center"
+    class="container px-8 md:px-6 pt-[10rem] landscape:pt-[8rem] landscape:pb-[3rem] md:pt-0 pb-8 md:pb-0 uppercase font-bold tracking-wider text-white min-h-screen flex flex-col justify-center"
   >
     <!-- No Data -->
     <div v-if="data.length === 0" class="w-full flex flex-col items-center">
@@ -52,7 +52,7 @@
   <!-- Spinner While Loading Data -->
   <div
     v-if="!dataLoaded"
-    class="container px-8 md:px-6 pt-[10rem] md:pt-0 pb-8 md:pb-0 uppercase font-bold tracking-wider text-white min-h-screen flex flex-col justify-center"
+    class="container px-8 md:px-6 pt-[10rem] landscape:pt-[8rem] landscape:pb-[3rem] md:pt-0 pb-8 md:pb-0 uppercase font-bold tracking-wider text-white min-h-screen flex flex-col justify-center"
   >
     <div class="w-full flex flex-col items-center">
       <svg

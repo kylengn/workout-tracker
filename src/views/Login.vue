@@ -1,6 +1,6 @@
 <template>
   <div
-    class="max-w-screen-sm mx-auto px-6 uppercase font-bold tracking-wider min-h-screen flex flex-col justify-center"
+    class="max-w-screen-sm mx-auto px-6 landscape:pt-[8rem] landscape:pb-[3rem] uppercase font-bold tracking-wider min-h-screen flex flex-col justify-center"
   >
     <!-- Error Handling -->
     <div v-if="errorMsg" class="mb-10 p-4 rounded-md bg-red-500 shadow-lg">
