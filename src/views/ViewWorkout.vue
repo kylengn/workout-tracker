@@ -374,7 +374,6 @@ export default {
         if (error) throw error;
         data.value = workouts[0];
         dataLoaded.value = true;
-        console.log(data.value);
       } catch (error) {
         errorMsg.value = error.message;
         setTimeout(() => {
