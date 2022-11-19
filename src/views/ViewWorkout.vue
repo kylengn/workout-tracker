@@ -184,7 +184,7 @@
         <!-- Cardio Training -->
         <div
           v-else-if="data.workoutType === 'cardio'"
-          class="flex flex-col gap-y-4 w-full"
+          class="flex flex-col gap-y-10 w-full"
         >
           <div
             class="flex flex-col gap-x-6 gap-y-2 relative sm:flex-row"
@@ -277,7 +277,7 @@
         </div>
 
         <!-- Rest Training -->
-        <div v-else class="flex flex-col gap-y-4 w-full">
+        <div v-else class="flex flex-col gap-y-10 w-full">
           <div
             class="flex flex-col gap-x-6 gap-y-2 relative sm:flex-row"
             v-for="(item, index) in data.exercises"

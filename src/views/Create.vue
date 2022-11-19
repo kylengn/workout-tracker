@@ -93,7 +93,7 @@
               />
             </div>
             <div class="flex flex-col flex-1">
-              <label for="weight" class="mb-1 text-sm">Weight (Kg's)</label>
+              <label for="weight" class="mb-1 text-sm">Weight</label>
               <input
                 type="text"
                 id="weight"
