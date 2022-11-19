@@ -51,6 +51,7 @@
             <option value="#">Select Type</option>
             <option value="strength">Strength</option>
             <option value="cardio">Cardio</option>
+            <option value="rest">Rest</option>
           </select>
         </div>
 
@@ -119,7 +120,7 @@
         </div>
 
         <!-- Cardio Training Inputs -->
-        <div v-if="workoutType === 'cardio'" class="flex flex-col gap-y-4">
+        <div v-else-if="workoutType === 'cardio'" class="flex flex-col gap-y-4">
           <div
             class="flex flex-col gap-x-6 gap-y-2 relative md:flex-row"
             v-for="(item, index) in exercises"
@@ -183,6 +184,63 @@
           >
         </div>
 
+        <!-- Rest Traiining Inputs -->
+        <div v-else class="flex flex-col gap-y-4">
+          <div
+            class="flex flex-col gap-x-6 gap-y-2 relative md:flex-row"
+            v-for="(item, index) in exercises"
+            :key="index"
+          >
+            <div class="flex flex-col md:w-1/3">
+              <label for="rest-type" class="mb-1 text-sm">Rest Type</label>
+              <select
+                id="rest-type"
+                class="p-2 w-full text-gray-500 focus:outline-none"
+                v-model="item.restType"
+              >
+                <option value="#">Select Type</option>
+                <option value="Hot Sauna">Hot Sauna</option>
+                <option value="Cold (or Ice) Bath/Shower">
+                  Cold (or Ice) Bath/Shower
+                </option>
+              </select>
+            </div>
+            <div class="flex flex-col flex-1">
+              <label for="rounds" class="mb-1 text-sm">Rounds</label>
+              <input
+                type="text"
+                id="rounds"
+                required
+                class="p-2 w-full text-gray-500 focus:outline-none"
+                v-model="item.rounds"
+              />
+            </div>
+            <div class="flex flex-col flex-1">
+              <label for="duration" class="mb-1 text-sm">Duration</label>
+              <input
+                type="text"
+                id="duration"
+                required
+                class="p-2 w-full text-gray-500 focus:outline-none"
+                v-model="item.duration"
+              />
+            </div>
+
+            <img
+              @click="deleteExercise(item.id)"
+              src="../assets/images/trash-simple-fill.png"
+              class="h-6 w-auto absolute -left-8 cursor-pointer"
+              alt=""
+            />
+          </div>
+          <!-- Add Exercise Btn -->
+          <Button
+            @click="addExercise"
+            class="hover:border-red-500 hover:text-red-500 bg-red-500"
+            >Add Exercise</Button
+          >
+        </div>
+
         <!-- Create Workout Btn -->
         <Button
           type="submit"
@@ -226,12 +284,22 @@ export default {
         return;
       }
 
+      if (workoutType.value === "cardio") {
+        exercises.value.push({
+          id: uid(),
+          cardioType: "",
+          distance: "",
+          duration: "",
+          pace: "",
+        });
+        return;
+      }
+
       exercises.value.push({
         id: uid(),
-        cardioType: "",
-        distance: "",
+        restType: "",
+        rounds: "",
         duration: "",
-        pace: "",
       });
     };
 

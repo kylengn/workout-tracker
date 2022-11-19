@@ -53,8 +53,16 @@
 
         <!-- Strength Image -->
         <img
-          v-else
+          v-else-if="data.workoutType === 'strength'"
           src="../assets/images/muscles.png"
+          class="h-24 w-auto"
+          alt=""
+        />
+
+        <!-- Rest Image -->
+        <img
+          v-else
+          src="../assets/images/recovery.png"
           class="h-24 w-auto"
           alt=""
         />
@@ -174,7 +182,10 @@
         </div>
 
         <!-- Cardio Training -->
-        <div v-else class="flex flex-col gap-y-4 w-full">
+        <div
+          v-else-if="data.workoutType === 'cardio'"
+          class="flex flex-col gap-y-4 w-full"
+        >
           <div
             class="flex flex-col gap-x-6 gap-y-2 relative sm:flex-row"
             v-for="(item, index) in data.exercises"
@@ -237,6 +248,86 @@
                 v-model="item.pace"
               />
               <p v-else class="capitalize">{{ item.pace }}</p>
+            </div>
+
+            <img
+              v-if="edit"
+              @click="deleteExercise(item.id)"
+              src="../assets/images/trash-simple-fill.png"
+              class="h-4 w-auto absolute -left-6 top-1 cursor-pointer"
+              alt=""
+            />
+          </div>
+
+          <!-- Exercise Counter -->
+          <div
+            class="flex space-x-2 border-t-2 border-light-grey border-double pt-6 text-lg"
+          >
+            <p class="text-red-500">Total Exercise(s):</p>
+            <span>{{ data.exercises.length }}</span>
+          </div>
+
+          <!-- Add Exercise Btn -->
+          <Button
+            v-if="edit"
+            @click="addExercise"
+            class="hover:border-red-500 hover:text-red-500 bg-red-500"
+            >Add Exercise</Button
+          >
+        </div>
+
+        <!-- Rest Training -->
+        <div v-else class="flex flex-col gap-y-4 w-full">
+          <div
+            class="flex flex-col gap-x-6 gap-y-2 relative sm:flex-row"
+            v-for="(item, index) in data.exercises"
+            :key="index"
+          >
+            <div class="flex flex-2 flex-col md:w-1/3">
+              <label for="rest-type" class="mb-1 text-md text-red-500 italic"
+                >Rest Type</label
+              >
+              <select
+                v-if="edit"
+                id="rest-type"
+                class="p-2 w-full text-gray-500 focus:outline-none"
+                v-model="item.restType"
+              >
+                <option value="#">Select Type</option>
+                <option value="Hot Sauna">Hot Sauna</option>
+                <option value="Cold (or Ice) Bath/Shower">
+                  Cold (or Ice) Bath/Shower
+                </option>
+              </select>
+              <p v-else class="capitalize">{{ item.restType }}</p>
+            </div>
+            <div class="flex flex-col flex-1">
+              <label for="distance" class="mb-1 text-md text-red-500 italic"
+                >Rounds</label
+              >
+              <input
+                v-if="edit"
+                type="text"
+                id="rounds"
+                required
+                class="p-2 w-full text-gray-500 focus:outline-none"
+                v-model="item.rounds"
+              />
+              <p v-else class="capitalize">{{ item.rounds }}</p>
+            </div>
+            <div class="flex flex-col flex-1">
+              <label for="duration" class="mb-1 text-md text-red-500 italic"
+                >Duration</label
+              >
+              <input
+                v-if="edit"
+                type="text"
+                id="duration"
+                required
+                class="p-2 w-full text-gray-500 focus:outline-none"
+                v-model="item.duration"
+              />
+              <p v-else class="capitalize">{{ item.duration }}</p>
             </div>
 
             <img

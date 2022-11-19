@@ -34,8 +34,16 @@
 
         <!-- Strength Image -->
         <img
-          v-else
+          v-else-if="workout.workoutType === 'strength'"
           src="../assets/images/muscles.png"
+          class="h-24 w-auto"
+          alt=""
+        />
+
+        <!-- Rest Image -->
+        <img
+          v-else
+          src="../assets/images/recovery.png"
           class="h-24 w-auto"
           alt=""
         />
