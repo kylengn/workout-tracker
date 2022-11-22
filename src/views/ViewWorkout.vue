@@ -202,24 +202,25 @@
                 v-model="item.cardioType"
               >
                 <option value="#">Select Type</option>
-                <option value="run">Run</option>
-                <option value="spin">Spin</option>
+                <option value="Boxing">Boxing</option>
+                <option value="Battle Rope">Battle Rope</option>
+                <option value="Skipping">Skipping</option>
               </select>
               <p v-else class="capitalize">{{ item.cardioType }}</p>
             </div>
             <div class="flex flex-col flex-1">
               <label for="distance" class="mb-1 text-md text-red-500 italic"
-                >Distance</label
+                >Rounds</label
               >
               <input
                 v-if="edit"
                 type="text"
-                id="distance"
+                id="rounds"
                 required
                 class="p-2 w-full text-gray-500 focus:outline-none"
-                v-model="item.distance"
+                v-model="item.rounds"
               />
-              <p v-else class="capitalize">{{ item.distance }}</p>
+              <p v-else class="capitalize">{{ item.rounds }}</p>
             </div>
             <div class="flex flex-col flex-1">
               <label for="duration" class="mb-1 text-md text-red-500 italic"
@@ -234,20 +235,6 @@
                 v-model="item.duration"
               />
               <p v-else class="capitalize">{{ item.duration }}</p>
-            </div>
-            <div class="flex flex-col flex-1">
-              <label for="pace" class="mb-1 text-md text-red-500 italic"
-                >Pace</label
-              >
-              <input
-                v-if="edit"
-                type="text"
-                id="pace"
-                required
-                class="p-2 w-full text-gray-500 focus:outline-none"
-                v-model="item.pace"
-              />
-              <p v-else class="capitalize">{{ item.pace }}</p>
             </div>
 
             <img

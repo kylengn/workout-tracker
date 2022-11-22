@@ -134,18 +134,19 @@
                 v-model="item.cardioType"
               >
                 <option value="#">Select Type</option>
-                <option value="run">Run</option>
-                <option value="spin">Spin</option>
+                <option value="Boxing">Boxing</option>
+                <option value="Battle Rope">Battle Rope</option>
+                <option value="Skipping">Skipping</option>
               </select>
             </div>
             <div class="flex flex-col flex-1">
-              <label for="distance" class="mb-1 text-sm">Distance</label>
+              <label for="rounds" class="mb-1 text-sm">Rounds</label>
               <input
                 type="text"
-                id="distance"
+                id="rounds"
                 required
                 class="p-2 w-full text-gray-500 focus:outline-none"
-                v-model="item.distance"
+                v-model="item.rounds"
               />
             </div>
             <div class="flex flex-col flex-1">
@@ -156,16 +157,6 @@
                 required
                 class="p-2 w-full text-gray-500 focus:outline-none"
                 v-model="item.duration"
-              />
-            </div>
-            <div class="flex flex-col flex-1">
-              <label for="pace" class="mb-1 text-sm">Pace</label>
-              <input
-                type="text"
-                id="pace"
-                required
-                class="p-2 w-full text-gray-500 focus:outline-none"
-                v-model="item.pace"
               />
             </div>
 
