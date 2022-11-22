@@ -48,10 +48,11 @@
             v-model="workoutType"
             @change="workoutChange"
           >
-            <option value="#">Select Type</option>
-            <option value="strength">Strength</option>
-            <option value="cardio">Cardio</option>
-            <option value="rest">Rest</option>
+            <optgroup label="Select Type">
+              <option value="strength">Strength</option>
+              <option value="cardio">Cardio</option>
+              <option value="rest">Rest</option>
+            </optgroup>
           </select>
         </div>
 
@@ -133,10 +134,11 @@
                 class="p-2 w-full text-gray-500 focus:outline-none"
                 v-model="item.cardioType"
               >
-                <option value="#">Select Type</option>
-                <option value="Boxing">Boxing</option>
-                <option value="Battle Rope">Battle Rope</option>
-                <option value="Skipping">Skipping</option>
+                <optgroup label="Cardio Type">
+                  <option value="Boxing">Boxing</option>
+                  <option value="Battle Rope">Battle Rope</option>
+                  <option value="Skipping">Skipping</option>
+                </optgroup>
               </select>
             </div>
             <div class="flex flex-col flex-1">
@@ -189,11 +191,12 @@
                 class="p-2 w-full text-gray-500 focus:outline-none"
                 v-model="item.restType"
               >
-                <option value="#">Select Type</option>
-                <option value="Hot Sauna">Hot Sauna</option>
-                <option value="Cold (or Ice) Bath/Shower">
-                  Cold (or Ice) Bath/Shower
-                </option>
+                <optgroup label="Rest Type">
+                  <option value="Hot Sauna">Hot Sauna</option>
+                  <option value="Cold (or Ice) Bath/Shower">
+                    Cold (or Ice) Bath/Shower
+                  </option>
+                </optgroup>
               </select>
             </div>
             <div class="flex flex-col flex-1">

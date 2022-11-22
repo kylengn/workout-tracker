@@ -201,10 +201,11 @@
                 class="p-2 w-full text-gray-500 focus:outline-none"
                 v-model="item.cardioType"
               >
-                <option value="#">Select Type</option>
-                <option value="Boxing">Boxing</option>
-                <option value="Battle Rope">Battle Rope</option>
-                <option value="Skipping">Skipping</option>
+                <optgroup label="Cardio Type">
+                  <option value="Boxing">Boxing</option>
+                  <option value="Battle Rope">Battle Rope</option>
+                  <option value="Skipping">Skipping</option>
+                </optgroup>
               </select>
               <p v-else class="capitalize">{{ item.cardioType }}</p>
             </div>
@@ -280,11 +281,12 @@
                 class="p-2 w-full text-gray-500 focus:outline-none"
                 v-model="item.restType"
               >
-                <option value="#">Select Type</option>
-                <option value="Hot Sauna">Hot Sauna</option>
-                <option value="Cold (or Ice) Bath/Shower">
-                  Cold (or Ice) Bath/Shower
-                </option>
+                <optgroup label="Rest Type">
+                  <option value="Hot Sauna">Hot Sauna</option>
+                  <option value="Cold (or Ice) Bath/Shower">
+                    Cold (or Ice) Bath/Shower
+                  </option>
+                </optgroup>
               </select>
               <p v-else class="capitalize">{{ item.restType }}</p>
             </div>
