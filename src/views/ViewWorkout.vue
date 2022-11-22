@@ -171,19 +171,18 @@
             <span>{{ data.exercises.length }}</span>
           </div>
 
-          <button
+          <!-- Add Exercise Btn -->
+          <Button
             v-if="edit"
             @click="addExercise"
-            type="button"
-            class="mt-6 py-2 px-6 rounded-full self-start uppercase tracking-wider text-white bg-red-500 duration-200 border-solid border-2 border-transparent hover:border-red-500 hover:bg-transparent hover:text-red-500"
+            class="hover:border-red-500 hover:text-red-500 bg-red-500"
+            >Add Exercise</Button
           >
-            Add Exercise
-          </button>
         </div>
 
         <!-- Cardio Training -->
         <div
-          v-else-if="data.workoutType === 'cardio'"
+          v-if="data.workoutType === 'cardio'"
           class="flex flex-col gap-y-10 w-full"
         >
           <div
@@ -265,7 +264,10 @@
         </div>
 
         <!-- Rest Training -->
-        <div v-else class="flex flex-col gap-y-10 w-full">
+        <div
+          v-if="data.workoutType === 'rest'"
+          class="flex flex-col gap-y-10 w-full"
+        >
           <div
             class="flex flex-col gap-x-6 gap-y-2 relative sm:flex-row"
             v-for="(item, index) in data.exercises"

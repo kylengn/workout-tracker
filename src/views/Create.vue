@@ -111,17 +111,16 @@
               alt=""
             />
           </div>
-          <button
+          <!-- Add Exercise Btn -->
+          <Button
             @click="addExercise"
-            type="button"
-            class="mt-6 py-2 px-6 rounded-full self-start uppercase tracking-wider text-white bg-red-500 duration-200 border-solid border-2 border-transparent hover:border-red-500 hover:bg-transparent hover:text-red-500"
+            class="hover:border-red-500 hover:text-red-500 bg-red-500"
+            >Add Exercise</Button
           >
-            Add Exercise
-          </button>
         </div>
 
         <!-- Cardio Training Inputs -->
-        <div v-else-if="workoutType === 'cardio'" class="flex flex-col gap-y-4">
+        <div v-if="workoutType === 'cardio'" class="flex flex-col gap-y-4">
           <div
             class="flex flex-col gap-x-6 gap-y-2 relative md:flex-row"
             v-for="(item, index) in exercises"
@@ -178,7 +177,7 @@
         </div>
 
         <!-- Rest Traiining Inputs -->
-        <div v-else class="flex flex-col gap-y-4">
+        <div v-if="workoutType === 'rest'" class="flex flex-col gap-y-4">
           <div
             class="flex flex-col gap-x-6 gap-y-2 relative md:flex-row"
             v-for="(item, index) in exercises"
